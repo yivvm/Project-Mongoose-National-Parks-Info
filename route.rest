@@ -1,0 +1,38 @@
+GET http://localhost:3001/parks
+
+
+
+###
+
+GET http://localhost:3001/parks/wrst
+
+
+
+###
+
+POST http://localhost:3001/parks
+Content-Type: application/json
+
+{
+    "name": "Dry Tortugas",
+    "fullName": "Dry Tortugas National Park",
+    "parkCode": "drto",
+    "description": "Almost 70 miles (113 km) west of Key West lies the remote Dry Tortugas National Park. This 100-square mile park is mostly open water with seven small islands. Accessible only by boat or seaplane, the park is known the world over as the home of magnificent Fort Jefferson, picturesque blue waters, superlative coral reefs and marine life, and the vast assortment of bird life that frequents the area."
+}
+
+
+
+###
+
+PATCH http://localhost:3001/parks/maca
+Content-Type: application/json
+
+{
+    "description": "Mammoth Cave National Park is home to thousands of years of human history and a rich diversity of plant and animal life, earning it the title of UNESCO World Heritage Site and International Biosphere Reserve. Enjoy the rolling hills, deep river valleys, and the world's longest known cave system."
+}
+
+
+
+### 
+
+DELETE http://localhost:3001/parks/grca
