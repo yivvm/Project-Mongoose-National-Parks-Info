@@ -12,10 +12,10 @@ db.once("open", () => console.log("connected to database"));
 
 app.use(express.json());
 
-// const subscribersRouter = require("./routes/subscribers");
-// app.use("/subscribers", subscribersRouter);
-
 const parksInfoRouter = require("./routes/parks");
 app.use("/parks", parksInfoRouter);
+
+const imagesRouter = require("./routes/images");
+app.use("/images", imagesRouter);
 
 app.listen(3001, () => console.log("server started on port 3001"));

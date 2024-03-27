@@ -1,11 +1,9 @@
 GET http://localhost:3001/parks
 
 
-
 ###
 
 GET http://localhost:3001/parks/wrst
-
 
 
 ###
@@ -21,7 +19,6 @@ Content-Type: application/json
 }
 
 
-
 ###
 
 PATCH http://localhost:3001/parks/maca
@@ -32,7 +29,46 @@ Content-Type: application/json
 }
 
 
-
 ### 
 
 DELETE http://localhost:3001/parks/grca
+
+
+
+
+
+### 
+
+GET http://localhost:3001/images
+
+
+###
+GET http://localhost:3001/images/660360875e5c49e264622cea
+
+
+### 
+
+POST http://localhost:3001/images
+Content-Type: application/json
+
+{
+    "id": 12,
+    "parkCode": "gaar",
+    "image": "https://www.nps.gov/common/uploads/structured_data/3C7A8B6B-1DD8-B71B-0B8B89FE0C6B6F4F.jpg"
+}
+
+
+###
+ 
+PATCH http://localhost:3001/images/660363cb5d139f916f236c90
+Content-Type: application/json
+
+{
+    "parkCode": "bisc",
+    "image": "https://www.nps.gov/common/uploads/structured_data/3C870533-1DD8-B71B-0B70CFF5EF6538F1.jpg"
+}
+
+
+### 
+
+DELETE http://localhost:3001/images/660363905d139f916f236c8d

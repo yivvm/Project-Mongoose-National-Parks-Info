@@ -1,13 +1,15 @@
 const mongoose = require("mongoose");
 
-const imageSchema = new mongoose.Schema({
-  id: {
-    type: Number,
+const parkCodeSchema = new mongoose.Schema({
+  name: {
+    type: String,
     required: true,
   },
   parkCode: {
     type: String,
     required: true,
+    index: true,
+    unique: true,
     validate: {
       validator: function (v) {
         return /[A-Za-z]{4}/.test(v);
@@ -15,12 +17,20 @@ const imageSchema = new mongoose.Schema({
       message: (props) => `${props.value} is not a valid park code.`,
     },
   },
-  image: {
+  type: {
     type: String,
     required: true,
   },
+  orgCode: {
+    type: Number,
+    required: false,
+  },
+  region: {
+    type: String,
+    required: false,
+  },
 });
 
-imageSchema.index({ id: 1 });
+parkCodeSchema.index({ parkCode: 1 });
 
-module.exports = mongoose.model("Image", imageSchema);
+module.exports = mongoose.model("Image", parkCodeSchema);
