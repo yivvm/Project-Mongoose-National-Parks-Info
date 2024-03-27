@@ -72,3 +72,44 @@ Content-Type: application/json
 ### 
 
 DELETE http://localhost:3001/images/660363905d139f916f236c8d
+
+
+
+
+
+###
+
+GET http://localhost:3001/parkcode
+
+
+###
+
+GET http://localhost:3001/parkcode/acad
+
+
+###
+
+POST http://localhost:3001/parkcode
+Content-Type: application/json
+
+{
+    "name": "TUZIGOOT",
+    "parkCode": "TUZI",
+    "type": "NM",
+    "orgCode": 8650,
+    "region": "IMR"
+}
+
+
+### 
+
+PATCH http://localhost:3001/parkcode/acad
+Content-Type: application/json
+
+{
+    "orgCode": 20001800
+}
+
+
+### 
+DELETE http://localhost:3001/parkcode/ACAD

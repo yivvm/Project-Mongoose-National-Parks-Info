@@ -20,6 +20,12 @@ const parkCodeSchema = new mongoose.Schema({
   type: {
     type: String,
     required: true,
+    validate: {
+      validator: function (v) {
+        return /N(P|M|HS|RA|P|RES|HP|S|L)/.test(v);
+      },
+      message: (props) => `${props.value} is not a valid park type.`,
+    },
   },
   orgCode: {
     type: Number,
@@ -33,4 +39,4 @@ const parkCodeSchema = new mongoose.Schema({
 
 parkCodeSchema.index({ parkCode: 1 });
 
-module.exports = mongoose.model("Image", parkCodeSchema);
+module.exports = mongoose.model("ParkCode", parkCodeSchema);

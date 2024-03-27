@@ -18,4 +18,7 @@ app.use("/parks", parksInfoRouter);
 const imagesRouter = require("./routes/images");
 app.use("/images", imagesRouter);
 
+const parkCodeRouter = require("./routes/parkCodes");
+app.use("/parkcode", parkCodeRouter);
+
 app.listen(3001, () => console.log("server started on port 3001"));
